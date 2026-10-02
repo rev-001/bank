@@ -1,0 +1,1717 @@
+{
+  "documents": {
+    "bank_statement.pdf": {
+      "headers": [
+        "Source PDF",
+        "Date",
+        "Reference",
+        "Description",
+        "Debit",
+        "Credit",
+        "Balance"
+      ],
+      "rows": [
+        [
+          "bank_statement.pdf",
+          "2026-08-01",
+          "INIT-001",
+          "Opening Balance",
+          "",
+          "",
+          45200.0
+        ],
+        [
+          "bank_statement.pdf",
+          "2026-08-04",
+          "TXN-8812",
+          "Client Retainer Acme Corp",
+          "",
+          12500.0,
+          57700.0
+        ],
+        [
+          "bank_statement.pdf",
+          "2026-08-08",
+          "TXN-8813",
+          "AWS Cloud Services Hosting",
+          1450.0,
+          "",
+          56250.0
+        ],
+        [
+          "bank_statement.pdf",
+          "2026-08-12",
+          "TXN-8814",
+          "Office Lease Downtown Tower",
+          4800.0,
+          "",
+          51450.0
+        ],
+        [
+          "bank_statement.pdf",
+          "2026-08-18",
+          "TXN-8815",
+          "Consulting Invoice INV-8842",
+          "",
+          26581.0,
+          78031.0
+        ],
+        [
+          "bank_statement.pdf",
+          "2026-08-25",
+          "TXN-8816",
+          "Payroll Distribution August",
+          18200.0,
+          "",
+          59831.0
+        ],
+        [
+          "bank_statement.pdf",
+          "2026-08-29",
+          "TXN-8817",
+          "Software Licenses Subscription",
+          850.0,
+          "",
+          58981.0
+        ]
+      ],
+      "column_types": [
+        "text",
+        "date",
+        "text",
+        "text",
+        "currency",
+        "currency",
+        "currency"
+      ],
+      "key_values": {
+        "Customer / Bill To": "Retainer Acme Corp",
+        "Currency": "USD"
+      },
+      "metadata": {
+        "filename": "bank_statement.pdf",
+        "template_name": "Auto-Discovered Schema",
+        "accuracy_score": 0.95,
+        "is_scanned": false,
+        "currency": "USD"
+      }
+    },
+    "invoice_standard.pdf": {
+      "headers": [
+        "Source PDF",
+        "Item Code",
+        "Description",
+        "Quantity",
+        "Unit Price",
+        "Total Price"
+      ],
+      "rows": [
+        [
+          "invoice_standard.pdf",
+          "SRV-01",
+          "Cloud Infrastructure Architecture Consulting",
+          40,
+          150.0,
+          6000.0
+        ],
+        [
+          "invoice_standard.pdf",
+          "LIC-04",
+          "Enterprise Database Annual License",
+          5,
+          1200.0,
+          6000.0
+        ],
+        [
+          "invoice_standard.pdf",
+          "SUP-12",
+          "24/7 Dedicated Support Tier 3 (Hours)",
+          25,
+          95.0,
+          2375.0
+        ],
+        [
+          "invoice_standard.pdf",
+          "DEV-08",
+          "Custom Integration & API Development",
+          60,
+          120.0,
+          7200.0
+        ],
+        [
+          "invoice_standard.pdf",
+          "SEC-02",
+          "Cybersecurity Audit & Penetration Testing",
+          1,
+          3500.0,
+          3500.0
+        ]
+      ],
+      "column_types": [
+        "text",
+        "text",
+        "text",
+        "integer",
+        "currency",
+        "currency"
+      ],
+      "key_values": {
+        "Invoice Number": "INV-2026-8842",
+        "Invoice Date": "2026-09-15",
+        "Due Date": "2026-10-15",
+        "Customer / Bill To": "Nexus Enterprise Solutions",
+        "Vendor / Company": "Apex Global Technologies Inc.",
+        "Tax ID / GSTIN / VAT": "US-948271049",
+        "Subtotal": "$25,075.00",
+        "Tax Amount": "$2,006.00",
+        "Discount": "$500.00",
+        "Grand Total": "$26,581.00",
+        "Payment Terms": "Net 30",
+        "Currency": "$"
+      },
+      "metadata": {
+        "filename": "invoice_standard.pdf",
+        "template_name": "Auto-Discovered Schema",
+        "accuracy_score": 1.0,
+        "is_scanned": false,
+        "currency": "$"
+      }
+    },
+    "noisy_vendor_bill.pdf": {
+      "headers": [
+        "Source PDF",
+        "Description",
+        "Item Code",
+        "Quantity",
+        "Unit Price",
+        "Total Price"
+      ],
+      "rows": [
+        [
+          "noisy_vendor_bill.pdf",
+          "Galvanized M12 Hex Bolts (Box of 100)",
+          7318,
+          10,
+          450.0,
+          4500.0
+        ],
+        [
+          "noisy_vendor_bill.pdf",
+          "High Tensile Studs 16x200mm",
+          7318,
+          20,
+          320.0,
+          6400.0
+        ],
+        [
+          "noisy_vendor_bill.pdf",
+          "EPDM Rubber Flange Gasket 4 Inch",
+          4016,
+          15,
+          180.0,
+          2700.0
+        ],
+        [
+          "noisy_vendor_bill.pdf",
+          "Silicone Sealant High Temp 310ml Cartridge",
+          3214,
+          12,
+          400.0,
+          4800.0
+        ]
+      ],
+      "column_types": [
+        "text",
+        "text",
+        "number",
+        "integer",
+        "currency",
+        "currency"
+      ],
+      "key_values": {
+        "Invoice Number": "BIC-7721",
+        "Invoice Date": "10/09/2026",
+        "Customer / Bill To": "Precision Fabricators",
+        "Vendor / Company": "Bharat Industrial Components",
+        "Tax ID / GSTIN / VAT": "33AAAAA0000A1Z5"
+      },
+      "metadata": {
+        "filename": "noisy_vendor_bill.pdf",
+        "template_name": "Auto-Discovered Schema",
+        "accuracy_score": 1.0,
+        "is_scanned": false,
+        "currency": null
+      }
+    },
+    "purchase_order_multipage.pdf": {
+      "headers": [
+        "Source PDF",
+        "Line Number",
+        "Reference",
+        "Description",
+        "Quantity",
+        "Unit Price",
+        "Total Price"
+      ],
+      "rows": [
+        [
+          "purchase_order_multipage.pdf",
+          1,
+          "PRT-901",
+          "Heavy Duty Steel Ball Bearings 50mm",
+          100,
+          14.5,
+          1450.0
+        ],
+        [
+          "purchase_order_multipage.pdf",
+          2,
+          "PRT-902",
+          "High Pressure Hydraulic Hose 10m",
+          25,
+          85.0,
+          2125.0
+        ],
+        [
+          "purchase_order_multipage.pdf",
+          3,
+          "PRT-903",
+          "Industrial Valve Actuator Assembly",
+          8,
+          340.0,
+          2720.0
+        ],
+        [
+          "purchase_order_multipage.pdf",
+          4,
+          "PRT-904",
+          "Rotary Shaft Encoder 1024 PPR",
+          15,
+          110.0,
+          1650.0
+        ],
+        [
+          "purchase_order_multipage.pdf",
+          5,
+          "PRT-905",
+          "Pneumatic Cylinder Double Acting",
+          12,
+          175.0,
+          2100.0
+        ],
+        [
+          "purchase_order_multipage.pdf",
+          6,
+          "PRT-906",
+          "Stainless Steel Flange 4-inch",
+          50,
+          32.0,
+          1600.0
+        ],
+        [
+          "purchase_order_multipage.pdf",
+          7,
+          "PRT-907",
+          "Linear Motion Guide Rail 2000mm",
+          6,
+          290.0,
+          1740.0
+        ],
+        [
+          "purchase_order_multipage.pdf",
+          8,
+          "PRT-908",
+          "Precision Gearbox 10:1 Ratio",
+          4,
+          650.0,
+          2600.0
+        ],
+        [
+          "purchase_order_multipage.pdf",
+          9,
+          "PRT-909",
+          "Ceramic Insulator Bushing High Volt",
+          30,
+          45.0,
+          1350.0
+        ],
+        [
+          "purchase_order_multipage.pdf",
+          10,
+          "PRT-910",
+          "Submersible Sump Pump 3HP",
+          3,
+          890.0,
+          2670.0
+        ],
+        [
+          "purchase_order_multipage.pdf",
+          11,
+          "PRT-911",
+          "Fiber Optic Transceiver Module",
+          20,
+          75.0,
+          1500.0
+        ],
+        [
+          "purchase_order_multipage.pdf",
+          12,
+          "PRT-912",
+          "Variable Frequency Drive 15kW",
+          2,
+          1450.0,
+          2900.0
+        ]
+      ],
+      "column_types": [
+        "text",
+        "number",
+        "text",
+        "text",
+        "integer",
+        "currency",
+        "currency"
+      ],
+      "key_values": {
+        "Invoice Date": "2026-08-20",
+        "Purchase Order": "Buyer",
+        "Vendor / Company": "Industrial Hardware Ltd.",
+        "Subtotal": "$24,405.00",
+        "Tax Amount": "$1,586.33",
+        "Grand Total": "$25,991.33",
+        "Payment Terms": "Net 45",
+        "Currency": "$"
+      },
+      "metadata": {
+        "filename": "purchase_order_multipage.pdf",
+        "template_name": "Auto-Discovered Schema",
+        "accuracy_score": 1.0,
+        "is_scanned": false
+      }
+    },
+    "ANNAI_KAVERI_STMT_50200086456585.pdf": {
+      "headers": [
+        "Source PDF",
+        "Date",
+        "Narration",
+        "Reference",
+        "Value Dt",
+        "Withdrawal",
+        "Deposit",
+        "Closing Balance"
+      ],
+      "rows": [
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "31/07/25",
+          "BALANCE BROUGHT FORWARD",
+          0,
+          "31/07/25",
+          0.0,
+          43831.19,
+          43831.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "01/08/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025080100478968",
+          "YESBN12025080100478968",
+          "01/08/25",
+          0.0,
+          660.0,
+          44491.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "03/08/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025080300340130",
+          "YESBN12025080300340130",
+          "03/08/25",
+          0.0,
+          2950.0,
+          47441.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "06/08/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025080600069547",
+          "YESBN12025080600069547",
+          "06/08/25",
+          0.0,
+          17450.0,
+          64891.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "08/08/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025080800592015",
+          "YESBN12025080800592015",
+          "08/08/25",
+          0.0,
+          1600.0,
+          66491.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "10/08/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025081001194725",
+          "YESBN12025081001194725",
+          "10/08/25",
+          0.0,
+          1500.0,
+          67991.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "12/08/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025081202167729",
+          "YESBN12025081202167729",
+          "12/08/25",
+          0.0,
+          6000.0,
+          73991.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "14/08/25",
+          "IB FUNDS TRANSFER DR-50200087231660 -ANNAIKAVERI CFPCL",
+          "IB14121108826917",
+          "14/08/25",
+          9000.0,
+          0.0,
+          64991.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "15/08/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025081500172112",
+          "YESBN12025081500172112",
+          "15/08/25",
+          0.0,
+          1000.0,
+          65991.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "16/08/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025081601445891",
+          "YESBN12025081601445891",
+          "16/08/25",
+          0.0,
+          21500.0,
+          87491.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "19/08/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025081900108937",
+          "YESBN12025081900108937",
+          "19/08/25",
+          0.0,
+          3625.78,
+          91116.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "19/08/25",
+          "IB FUNDS TRANSFER DR-50200087231660 -ANNAIKAVERI CFPCL",
+          "IB19180119686055",
+          "19/08/25",
+          80000.0,
+          0.0,
+          11116.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "20/08/25",
+          "NEFT CR-UTIB0000022-ONE 97 COMMUNICATIONS LIMITED ESCROW ACCOUNT _01-ANNAIKAVERI",
+          "UTIBN62025082004610164",
+          "20/08/25",
+          0.0,
+          140.0,
+          11256.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "21/08/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025082100220676",
+          "YESBN12025082100220676",
+          "21/08/25",
+          0.0,
+          3899.52,
+          15156.49
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "22/08/25",
+          "IB FUNDS TRANSFER CR-50200087231660 -ANNAIKAVERI CFPCL",
+          "IB22123739352759",
+          "22/08/25",
+          0.0,
+          100000.0,
+          115156.49
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "22/08/25",
+          "NEFT DR-IDIB000K043-ANNAI KAVERI COLLECTIVE FARMERS PRODUCER-NETBANK, MUM-HDFCN52025082226337948-HITECH SALES",
+          "HDFCN52025082226337948",
+          "22/08/25",
+          100000.0,
+          0.0,
+          15156.49
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "22/08/25",
+          "IB FUNDS TRANSFER DR-50200087231660 -ANNAIKAVERI CFPCL",
+          "IB22133424595288",
+          "22/08/25",
+          10000.0,
+          0.0,
+          5156.49
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "26/08/25",
+          "IB FUNDS TRANSFER CR-50200087231660 -ANNAIKAVERI CFPCL",
+          "IB26151303441274",
+          "26/08/25",
+          0.0,
+          30000.0,
+          35156.49
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "26/08/25",
+          "NEFT DR-IDIB000K043-ANNAI KAVERI COLLECTIVE FARMERS PRODUCER-NETBANK, MUM-HDFCN52025082632070121-HITECH SALES",
+          "HDFCN52025082632070121",
+          "26/08/25",
+          35000.0,
+          0.0,
+          156.49
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "30/08/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025083002526220",
+          "YESBN12025083002526220",
+          "30/08/25",
+          0.0,
+          350.0,
+          506.49
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "31/08/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025083103260866",
+          "YESBN12025083103260866",
+          "31/08/25",
+          0.0,
+          27450.0,
+          27956.49
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "02/09/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025090202249334",
+          "YESBN12025090202249334",
+          "02/09/25",
+          0.0,
+          980.0,
+          28936.49
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "07/09/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025090700419487",
+          "YESBN12025090700419487",
+          "07/09/25",
+          0.0,
+          500.0,
+          29436.49
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "09/09/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025090900185049",
+          "YESBN12025090900185049",
+          "09/09/25",
+          0.0,
+          2500.0,
+          31936.49
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "09/09/25",
+          "IB FUNDS TRANSFER DR-50200087231660 -ANNAIKAVERI CFPCL",
+          "IB09132645809133",
+          "09/09/25",
+          10000.0,
+          0.0,
+          21936.49
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "09/09/25",
+          "NEFT DR-IDIB000K043-ANNAI KAVERI COLLECTIVE FARMERS PRODUCER-NETBANK, MUM-HDFCN52025090961820259-HITECH SALES",
+          "HDFCN52025090961820259",
+          "09/09/25",
+          15000.0,
+          0.0,
+          6936.49
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "11/09/25",
+          "UPI-ONE97-POWERACCESS.PAYM11@ AXISBANK-UTIB0000022-657930802545-AWSPG2 02509101333J",
+          657930802545,
+          "11/09/25",
+          0.0,
+          1.0,
+          6937.49
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "18/09/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025091800078751",
+          "YESBN12025091800078751",
+          "18/09/25",
+          0.0,
+          965.78,
+          7903.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "20/09/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025092003469565",
+          "YESBN12025092003469565",
+          "20/09/25",
+          0.0,
+          1700.0,
+          9603.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "21/09/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025092100249465",
+          "YESBN12025092100249465",
+          "21/09/25",
+          0.0,
+          912.0,
+          10515.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "24/09/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025092400413377",
+          "YESBN12025092400413377",
+          "24/09/25",
+          0.0,
+          15000.0,
+          25515.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "26/09/25",
+          "NEFT CR-UTIB0000022-ONE 97 COMMUNICATIONS LIMITED ESCROW ACCOUNT _01-ANNAIKAVERI",
+          "UTIBN62025092606820232",
+          "26/09/25",
+          0.0,
+          300.0,
+          25815.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "30/09/25",
+          "CASH DEPOSIT BY - THANGAVEL - EDAPPADI",
+          0,
+          "30/09/25",
+          0.0,
+          500000.0,
+          525815.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "01/10/25",
+          "NEFT CR-UTIB0000022-ONE 97 COMMUNICATIONS LIMITED ESCROW ACCOUNT _01-ANNAIKAVERI",
+          "UTIBN62025100163393888",
+          "01/10/25",
+          0.0,
+          250.0,
+          526065.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "04/10/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025100400033322",
+          "YESBN12025100400033322",
+          "04/10/25",
+          0.0,
+          6800.0,
+          532865.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "04/10/25",
+          "SELF - CHQ PAID - EDAPPADI",
+          5,
+          "04/10/25",
+          500000.0,
+          0.0,
+          32865.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "05/10/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025100500928574",
+          "YESBN12025100500928574",
+          "05/10/25",
+          0.0,
+          16200.0,
+          49065.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "06/10/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025100600146963",
+          "YESBN12025100600146963",
+          "06/10/25",
+          0.0,
+          4000.0,
+          53065.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "09/10/25",
+          "NEFT CR-UTIB0000022-ONE 97 COMMUNICATIONS LIMITED ESCROW ACCOUNT _01-ANNAIKAVERI",
+          "UTIBN62025100953331219",
+          "09/10/25",
+          0.0,
+          120.0,
+          53185.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "09/10/25",
+          "IB FUNDS TRANSFER DR-50200087231660-ANNAIKAVERI CFPCL",
+          "NBXF4CJ3JTDAYMSW",
+          "09/10/25",
+          10000.0,
+          0.0,
+          43185.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "10/10/25",
+          "NEFT CR-UTIB0000022-ONE 97 COMMUNICATIONS LIMITED ESCROW ACCOUNT _01-ANNAIKAVERI",
+          "UTIBN62025101065248420",
+          "10/10/25",
+          0.0,
+          300.0,
+          43485.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "11/10/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025101102824660",
+          "YESBN12025101102824660",
+          "11/10/25",
+          0.0,
+          5200.0,
+          48685.27
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "17/10/25",
+          "CASH DEPOSIT CHARGES 300925-MIR2628868092113",
+          "MIR2628868092113",
+          "17/10/25",
+          645.64,
+          0.0,
+          48039.63
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "28/10/25",
+          "UPI-PAYTM SETTLEMENT-PAYTM.SETTLEMENT@ PTYS-YESB0PTMUPI-530101336880-AWSPG20251 0271215J",
+          530101336880,
+          "28/10/25",
+          0.0,
+          27.78,
+          48067.41
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "31/10/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025103100934078",
+          "YESBN12025103100934078",
+          "31/10/25",
+          0.0,
+          1000.0,
+          49067.41
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "02/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025110201536050",
+          "YESBN12025110201536050",
+          "02/11/25",
+          0.0,
+          3550.0,
+          52617.41
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "03/11/25",
+          "IB FUNDS TRANSFER NB3ZPN5XDABG4MST DR-50200087231660-ANNAIKAVERI CFPCL",
+          "",
+          "03/11/25",
+          25000.0,
+          0.0,
+          27617.41
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "04/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025110400287168",
+          "YESBN12025110400287168",
+          "04/11/25",
+          0.0,
+          1200.0,
+          28817.41
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "07/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025110700028419",
+          "YESBN12025110700028419",
+          "07/11/25",
+          0.0,
+          8400.0,
+          37217.41
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "09/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025110900366346",
+          "YESBN12025110900366346",
+          "09/11/25",
+          0.0,
+          6900.0,
+          44117.41
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "12/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025111200314724",
+          "YESBN12025111200314724",
+          "12/11/25",
+          0.0,
+          53600.0,
+          97717.41
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "13/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025111300270339",
+          "YESBN12025111300270339",
+          "13/11/25",
+          0.0,
+          1000.0,
+          98717.41
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "14/11/25",
+          "NEFT CR-UTIB0000022-ONE 97 COMMUNICATIONS LIMITED ESCROW ACCOUNT _01-ANNAIKAVERI",
+          "UTIBN62025111473360876",
+          "14/11/25",
+          0.0,
+          460.0,
+          99177.41
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "14/11/25",
+          "NEFT DR-IDIB000K043-ANNAI KAVERI COLLECTIVE FARMERS PRODUCER-NETBANK, MUM-HDFCN52025111498307771-HITECH SALES",
+          "HDFCN52025111498307771",
+          "14/11/25",
+          80000.0,
+          0.0,
+          19177.41
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "15/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025111500619108",
+          "YESBN12025111500619108",
+          "15/11/25",
+          0.0,
+          1150.0,
+          20327.41
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "16/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025111601943182",
+          "YESBN12025111601943182",
+          "16/11/25",
+          0.0,
+          10000.0,
+          30327.41
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "18/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025111801220901",
+          "YESBN12025111801220901",
+          "18/11/25",
+          0.0,
+          8965.78,
+          39293.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "20/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025112000437880",
+          "YESBN12025112000437880",
+          "20/11/25",
+          0.0,
+          24000.0,
+          63293.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "21/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESBN12025112100165116",
+          "YESBN12025112100165116",
+          "21/11/25",
+          0.0,
+          4942.0,
+          68235.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "22/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESAP53263474436",
+          "YESAP53263474436",
+          "22/11/25",
+          0.0,
+          3050.0,
+          71285.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "23/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESAP53271003825",
+          "YESAP53271003825",
+          "23/11/25",
+          0.0,
+          14420.0,
+          85705.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "25/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESAP53290407178",
+          "YESAP53290407178",
+          "25/11/25",
+          0.0,
+          6400.0,
+          92105.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "26/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESAP53300187861",
+          "YESAP53300187861",
+          "26/11/25",
+          0.0,
+          5030.0,
+          97135.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "27/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESAP53310361647",
+          "YESAP53310361647",
+          "27/11/25",
+          0.0,
+          3500.0,
+          100635.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "29/11/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESAP53330588078",
+          "YESAP53330588078",
+          "29/11/25",
+          0.0,
+          950.0,
+          101585.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "30/11/25",
+          "UPI-PAYTM SETTLEMENT-PAYTM.SETTLEMENT@ PTYS-YESB0PTMUPI-533402053858-AWSPG20251 1290001J",
+          533402053858,
+          "30/11/25",
+          0.0,
+          20.0,
+          101605.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "02/12/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESAP53360115561",
+          "YESAP53360115561",
+          "02/12/25",
+          0.0,
+          18810.0,
+          120415.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "06/12/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESAP53400228403",
+          "YESAP53400228403",
+          "06/12/25",
+          0.0,
+          4500.0,
+          124915.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "07/12/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESAP53410354406",
+          "YESAP53410354406",
+          "07/12/25",
+          0.0,
+          7390.0,
+          132305.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "09/12/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESAP53431587032",
+          "YESAP53431587032",
+          "09/12/25",
+          0.0,
+          14100.0,
+          146405.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "10/12/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESAP53441154482",
+          "YESAP53441154482",
+          "10/12/25",
+          0.0,
+          900.0,
+          147305.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "11/12/25",
+          "NEFT CR-UTIB0000022-ONE 97 COMMUNICATIONS LIMITED ESCROW ACCOUNT _01-ANNAIKAVERI CFPCL-AXNPM34550430090",
+          "AXNPM34550430090",
+          "11/12/25",
+          0.0,
+          200.0,
+          147505.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "13/12/25",
+          "NEFT CR-UTIB0000022-ONE 97 COMMUNICATIONS LIMITED ESCROW ACCOUNT _01-ANNAIKAVERI CFPCL-AXNPM34765588495",
+          "AXNPM34765588495",
+          "13/12/25",
+          0.0,
+          2170.0,
+          149675.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "14/12/25",
+          "UPI-ONE97-POWERACCESS.PAYM11@ AXISBANK-UTIB0000022-506520863485-AWSPG2 02512130001J",
+          506520863485,
+          "14/12/25",
+          0.0,
+          100.0,
+          149775.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "16/12/25",
+          "NEFT CR-UTIB0000022-ONE 97 COMMUNICATIONS LIMITED ESCROW ACCOUNT _01-ANNAIKAVERI CFPCL-AXNPM35093192014",
+          "AXNPM35093192014",
+          "16/12/25",
+          0.0,
+          370.0,
+          150145.19
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "19/12/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESAP53530933035",
+          "YESAP53530933035",
+          "19/12/25",
+          0.0,
+          4465.78,
+          154610.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "19/12/25",
+          "IB FUNDS TRANSFER NBKRW3WKGPJLK8FW DR-50200087231660-ANNAIKAVERI CFPCL",
+          "",
+          "19/12/25",
+          10000.0,
+          0.0,
+          144610.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "19/12/25",
+          "IB FUNDS TRANSFER NBMCBCYQSSQQ0ZOD DR-50200087231660-ANNAIKAVERI CFPCL",
+          "",
+          "19/12/25",
+          140000.0,
+          0.0,
+          4610.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "20/12/25",
+          "NEFT CR-YESB0000001-ONE 97 COMMUNICATIONS LIMITED SETTL-ANNAIKAVERI CFPCL-YESAP53541423411",
+          "YESAP53541423411",
+          "20/12/25",
+          0.0,
+          39000.0,
+          43610.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "26/12/25",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP53600230084",
+          "YESAP53600230084",
+          "26/12/25",
+          0.0,
+          11842.0,
+          55452.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "27/12/25",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP53610145181",
+          "YESAP53610145181",
+          "27/12/25",
+          0.0,
+          2650.0,
+          58102.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "27/12/25",
+          "IB FUNDS TRANSFER NBPAMIOYUT2AKD8K CR-50200087231660-ANNAIKAVERI CFPCL",
+          "",
+          "27/12/25",
+          0.0,
+          140000.0,
+          198102.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "27/12/25",
+          "NEFT DR-IDIB000K043-ANNAI KAVERI COLLECTIVE FARMERS PRODUCER-NETBANK, MUM-HDFCH00696713968-HITECH SALES",
+          "HDFCH00696713968",
+          "27/12/25",
+          150000.0,
+          0.0,
+          48102.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "28/12/25",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP53620285206",
+          "YESAP53620285206",
+          "28/12/25",
+          0.0,
+          4560.0,
+          52662.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "30/12/25",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP53640662632",
+          "YESAP53640662632",
+          "30/12/25",
+          0.0,
+          5300.0,
+          57962.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "31/12/25",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP53651825085",
+          "YESAP53651825085",
+          "31/12/25",
+          0.0,
+          11950.0,
+          69912.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "31/12/25",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP53656041814",
+          "YESAP53656041814",
+          "31/12/25",
+          0.0,
+          1000.0,
+          70912.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "02/01/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60020445481",
+          "YESAP60020445481",
+          "02/01/26",
+          0.0,
+          5200.0,
+          76112.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "06/01/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60061459931",
+          "YESAP60061459931",
+          "06/01/26",
+          0.0,
+          5600.0,
+          81712.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "08/01/26",
+          "NEFT CR-UTIB0000022-PAYTM PAYMENTS SERVICES LTD-PAYMENT AGGREGATOR ES-ANNAIKAVERI CFPCL-AXNPM00882973917",
+          "AXNPM00882973917",
+          "08/01/26",
+          0.0,
+          200.0,
+          81912.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "09/01/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60090406853",
+          "YESAP60090406853",
+          "09/01/26",
+          0.0,
+          3000.0,
+          84912.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "13/01/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60131674252",
+          "YESAP60131674252",
+          "13/01/26",
+          0.0,
+          3950.0,
+          88862.97
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "21/01/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60210825752",
+          "YESAP60210825752",
+          "21/01/26",
+          0.0,
+          967.78,
+          89830.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "22/01/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60220339064",
+          "YESAP60220339064",
+          "22/01/26",
+          0.0,
+          4700.0,
+          94530.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "23/01/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60231471948",
+          "YESAP60231471948",
+          "23/01/26",
+          0.0,
+          900.0,
+          95430.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "24/01/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60241661344",
+          "YESAP60241661344",
+          "24/01/26",
+          0.0,
+          3700.0,
+          99130.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "27/01/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60271792734",
+          "YESAP60271792734",
+          "27/01/26",
+          0.0,
+          3700.0,
+          102830.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "30/01/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60300974187",
+          "YESAP60300974187",
+          "30/01/26",
+          0.0,
+          530.0,
+          103360.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "01/02/26",
+          "NEFT CR-UTIB0000022-PAYTM PAYMENTS SERVICES LTD-PAYMENT AGGREGATOR ES-ANNAIKAVERI CFPCL-AXNPM03284430592",
+          "AXNPM03284430592",
+          "01/02/26",
+          0.0,
+          40.0,
+          103400.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "03/02/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60341584126",
+          "YESAP60341584126",
+          "03/02/26",
+          0.0,
+          13000.0,
+          116400.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "04/02/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60351222065",
+          "YESAP60351222065",
+          "04/02/26",
+          0.0,
+          6350.0,
+          122750.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "05/02/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60362136655",
+          "YESAP60362136655",
+          "05/02/26",
+          0.0,
+          35000.0,
+          157750.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "06/02/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60372011150",
+          "YESAP60372011150",
+          "06/02/26",
+          0.0,
+          10000.0,
+          167750.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "07/02/26",
+          "NEFT CR-UTIB0000022-PAYTM PAYMENTS SERVICES LTD-PAYMENT AGGREGATOR ES-ANNAIKAVERI CFPCL-AXNPM03832073347",
+          "AXNPM03832073347",
+          "07/02/26",
+          0.0,
+          400.0,
+          168150.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "10/02/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60411814586",
+          "YESAP60411814586",
+          "10/02/26",
+          0.0,
+          43300.0,
+          211450.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "11/02/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60421816014",
+          "YESAP60421816014",
+          "11/02/26",
+          0.0,
+          6150.0,
+          217600.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "14/02/26",
+          "NEFT CR-UTIB0000022-PAYTM PAYMENTS SERVICES LTD-PAYMENT AGGREGATOR ES-ANNAIKAVERI CFPCL-AXNPM04596168461",
+          "AXNPM04596168461",
+          "14/02/26",
+          0.0,
+          4500.0,
+          222100.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "15/02/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60460030566",
+          "YESAP60460030566",
+          "15/02/26",
+          0.0,
+          21000.0,
+          243100.75
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "18/02/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60490017871",
+          "YESAP60490017871",
+          "18/02/26",
+          0.0,
+          2865.78,
+          245966.53
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "19/02/26",
+          "NEFT CR-UTIB0000022-PAYTM PAYMENTS SERVICES LTD-PAYMENT AGGREGATOR ES-ANNAIKAVERI CFPCL-AXNPM05056898918",
+          "AXNPM05056898918",
+          "19/02/26",
+          0.0,
+          80.0,
+          246046.53
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "21/02/26",
+          "NEFT CR-UTIB0000022-PAYTM PAYMENTS SERVICES LTD-PAYMENT AGGREGATOR ES-ANNAIKAVERI CFPCL-AXNPM05272075199",
+          "AXNPM05272075199",
+          "21/02/26",
+          0.0,
+          142.0,
+          246188.53
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "21/02/26",
+          "RTGS DR-IDIB000K047-ANNAI KAVERI COLLECTIVE FARMERS -EDAPPADI-HDFCR52026022172745879",
+          6,
+          "21/02/26",
+          230000.0,
+          0.0,
+          16188.53
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "24/02/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60550118157",
+          "YESAP60550118157",
+          "24/02/26",
+          0.0,
+          21800.0,
+          37988.53
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "03/03/26",
+          "NEFT CR-UTIB0000022-PAYTM PAYMENTS SERVICES LTD-PAYMENT AGGREGATOR ES-ANNAIKAVERI CFPCL-AXNPM06256751055",
+          "AXNPM06256751055",
+          "03/03/26",
+          0.0,
+          80.0,
+          38068.53
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "10/03/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60691709006",
+          "YESAP60691709006",
+          "10/03/26",
+          0.0,
+          2100.0,
+          40168.53
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "11/03/26",
+          "NEFT CR-UTIB0000022-PAYTM PAYMENTS SERVICES LTD-PAYMENT AGGREGATOR ES-ANNAIKAVERI CFPCL-AXNPM07021299161",
+          "AXNPM07021299161",
+          "11/03/26",
+          0.0,
+          250.0,
+          40418.53
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "13/03/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60720718952",
+          "YESAP60720718952",
+          "13/03/26",
+          0.0,
+          18520.0,
+          58938.53
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "17/03/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60760720504",
+          "YESAP60760720504",
+          "17/03/26",
+          0.0,
+          6165.78,
+          65104.31
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "18/03/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60771944891",
+          "YESAP60771944891",
+          "18/03/26",
+          0.0,
+          4200.0,
+          69304.31
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "19/03/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60782308103",
+          "YESAP60782308103",
+          "19/03/26",
+          0.0,
+          5850.0,
+          75154.31
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "21/03/26",
+          "NEFT CR-UTIB0000022-PAYTM PAYMENTS SERVICES LTD-PAYMENT AGGREGATOR ES-ANNAIKAVERI CFPCL-AXNPM08010163138",
+          "AXNPM08010163138",
+          "21/03/26",
+          0.0,
+          242.0,
+          75396.31
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "23/03/26",
+          "RTGS CR-IDIB000K043-ANNAI KAVERI COLLECTIVE FARMERS PRO-ANNAIKAVERI CFPCL-IDIBR52026032301159351",
+          "IDIBR52026032301159351",
+          "23/03/26",
+          0.0,
+          630000.0,
+          705396.31
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "23/03/26",
+          "SELF - CHQ PAID - EDAPPADI",
+          7,
+          "23/03/26",
+          700000.0,
+          0.0,
+          5396.31
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "24/03/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60830206983",
+          "YESAP60830206983",
+          "24/03/26",
+          0.0,
+          3000.0,
+          8396.31
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "25/03/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60841632456",
+          "YESAP60841632456",
+          "25/03/26",
+          0.0,
+          3440.0,
+          11836.31
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "27/03/26",
+          "NEFT CR-UTIB0000022-PAYTM PAYMENTS SERVICES LTD-PAYMENT AGGREGATOR ES-ANNAIKAVERI CFPCL-AXNPM08660002473",
+          "AXNPM08660002473",
+          "27/03/26",
+          0.0,
+          10.0,
+          11846.31
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "29/03/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60882041284",
+          "YESAP60882041284",
+          "29/03/26",
+          0.0,
+          1780.0,
+          13626.31
+        ],
+        [
+          "ANNAI_KAVERI_STMT_50200086456585.pdf",
+          "31/03/26",
+          "NEFT CR-YESB0000001-PAYTM PAYMENTS SERVICES LIMITED PA -ANNAIKAVERI CFPCL-YESAP60901679641",
+          "YESAP60901679641",
+          "31/03/26",
+          0.0,
+          10100.0,
+          23726.31
+        ]
+      ],
+      "column_types": [
+        "text",
+        "date",
+        "text",
+        "text",
+        "text",
+        "currency",
+        "currency",
+        "currency"
+      ],
+      "key_values": {
+        "Account Number": "50200086156585",
+        "Statement From": "01/04/2025",
+        "Statement To": "31/03/2026",
+        "Opening Balance": "0.00",
+        "Debit Transactions": "17",
+        "Credit Transactions": "111",
+        "Total Debits": "2,104,645.64",
+        "Total Credits": "2,128,371.95",
+        "Closing Balance": "23,726.31",
+        "Bank": "HDFC Bank",
+        "Currency": "INR"
+      },
+      "metadata": {
+        "filename": "ANNAI_KAVERI_STMT_50200086456585.pdf",
+        "template_name": "Auto-Discovered Schema",
+        "accuracy_score": 0.95,
+        "is_scanned": false,
+        "currency": "INR"
+      }
+    }
+  }
+}

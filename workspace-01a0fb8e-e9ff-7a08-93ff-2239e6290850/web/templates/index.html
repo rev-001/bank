@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline PDF to Excel Intelligent Agent</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- TOP APP BAR -->
+        <header class="app-header">
+            <div class="header-left">
+                <div class="logo-badge">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <span>PDF &rarr; Excel Agent</span>
+                </div>
+                <span class="offline-badge">
+                    <span class="pulse-dot"></span> 100% Offline & Local
+                </span>
+            </div>
+
+            <div class="header-center">
+                <div class="stats-pill" id="stats-history" onclick="openHistoryModal()">
+                    <span class="stat-num" id="stat-history-count">0</span> Past Works in History
+                </div>
+                <div class="stats-pill" id="stats-templates" onclick="openTemplatesModal()">
+                    <span class="stat-num" id="stat-template-count">0</span> Learned Templates
+                </div>
+            </div>
+
+            <div class="header-right">
+                <button class="btn btn-secondary" onclick="openHistoryModal()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    History
+                </button>
+                <button class="btn btn-secondary" onclick="openTemplatesModal()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                    Templates
+                </button>
+            </div>
+        </header>
+
+        <!-- MAIN WORKSPACE -->
+        <main class="workspace-grid">
+            <!-- LEFT PANEL: Ingestion & Samples -->
+            <section class="panel left-panel">
+                <div class="panel-header">
+                    <h3>Document Ingestion</h3>
+                </div>
+
+                <!-- Dropzone -->
+                <div class="upload-dropzone" id="dropzone">
+                    <input type="file" id="file-input" accept=".pdf" style="display:none;">
+                    <div class="dropzone-content" onclick="document.getElementById('file-input').click()">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p class="dropzone-title">Drop PDF file here or <span class="highlight">Browse</span></p>
+                        <p class="dropzone-sub">Invoices, Purchase Orders, Receipts, Statements</p>
+                    </div>
+                </div>
+
+                <!-- Sample Documents -->
+                <div class="sample-docs-section">
+                    <div class="section-title">
+                        <span>Load Sample Documents</span>
+                        <span class="badge">Instant Test</span>
+                    </div>
+                    <div class="sample-list" id="sample-list">
+                        <div class="sample-loading">Loading samples...</div>
+                    </div>
+                </div>
+
+                <!-- Active Document Details -->
+                <div class="active-doc-card" id="active-doc-card" style="display:none;">
+                    <div class="doc-card-header">
+                        <span class="doc-badge">Active Document</span>
+                        <span class="doc-accuracy" id="doc-accuracy-badge">98.5% Exact</span>
+                    </div>
+                    <h4 id="active-doc-name">invoice_standard.pdf</h4>
+                    <div class="doc-meta-details">
+                        <span id="doc-template-tag">Standard Auto-Mapped</span>
+                        <span id="doc-rows-tag">5 Line Items</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CENTER PANEL: Extracted Data & Excel Live View -->
+            <section class="panel center-panel">
+                <div class="panel-header tab-header">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" onclick="switchTab('table-tab')">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+                            Extracted Table (<span id="tab-row-count">0</span>)
+                        </button>
+                        <button class="tab-btn" onclick="switchTab('kv-tab')">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                            Document Metadata (<span id="tab-kv-count">0</span>)
+                        </button>
+                        <button class="tab-btn" onclick="switchTab('audit-tab')">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            Exact Math & Audit
+                        </button>
+                    </div>
+
+                    <div class="tab-actions">
+                        <button class="btn btn-outline" id="btn-save-tpl" onclick="promptSaveTemplate()" disabled>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                            Save Template
+                        </button>
+                        <a id="btn-download-excel" class="btn btn-primary disabled" href="#" download>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Download all_transactions.xlsx
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tab 1: Extracted Table -->
+                <div class="tab-content active" id="table-tab">
+                    <div class="table-editor-toolbar" id="table-toolbar" style="display:none;">
+                        <span class="toolbar-hint">Double-click any cell to edit. Edits are recorded to agent memory.</span>
+                        <div class="toolbar-btns">
+                            <button class="btn-xs" onclick="addTableRow()">+ Add Row</button>
+                            <button class="btn-xs" onclick="syncCustomEdits()">Apply Changes & Export</button>
+                        </div>
+                    </div>
+                    <div class="table-container" id="table-container">
+                        <div class="empty-state">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                            <p class="empty-title">No Document Loaded</p>
+                            <p class="empty-sub">Upload a PDF or select a sample on the left to extract structured tables & metadata.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Key Values -->
+                <div class="tab-content" id="kv-tab">
+                    <div class="kv-grid" id="kv-container">
+                        <div class="empty-state">
+                            <p class="empty-sub">Document header metadata will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Exact Math & Verification Audit -->
+                <div class="tab-content" id="audit-tab">
+                    <div class="audit-container" id="audit-container">
+                        <div class="empty-state">
+                            <p class="empty-sub">Mathematical checksums and audit validations will be displayed here.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RIGHT PANEL: Agent Intelligence & Chat Loop -->
+            <section class="panel right-panel">
+                <div class="panel-header">
+                    <div class="agent-title">
+                        <div class="agent-avatar">AI</div>
+                        <div>
+                            <h3>Agent Assistant</h3>
+                            <p class="agent-sub">Learns rules & history from chat</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Prompt Chips -->
+                <div class="quick-chips">
+                    <div class="chip-label">Quick Instructions:</div>
+                    <div class="chips-list">
+                        <button class="chip" onclick="sendQuickPrompt('Rename Particulars to Description')">Rename Particulars &rarr; Description</button>
+                        <button class="chip" onclick="sendQuickPrompt('Rename Qnty to Quantity')">Rename Qnty &rarr; Quantity</button>
+                        <button class="chip" onclick="sendQuickPrompt('Rename Line Amt to Total Price')">Rename Line Amt &rarr; Total Price</button>
+                        <button class="chip" onclick="sendQuickPrompt('Set date format to YYYY-MM-DD')">Date Format &rarr; ISO</button>
+                        <button class="chip" onclick="sendQuickPrompt('Remember this layout as Custom Invoice Template')">Save Current Template</button>
+                    </div>
+                </div>
+
+                <!-- Chat Feed -->
+                <div class="chat-feed" id="chat-feed">
+                    <div class="chat-msg system">
+                        <div class="msg-bubble">
+                            <strong>Offline Agent Ready.</strong><br>
+                            I automatically remember your past templates, apply historical column mappings, and verify exact arithmetic checksums. You can chat with me to teach new column synonyms or layout rules anytime!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input Form -->
+                <form class="chat-input-bar" id="chat-form" onsubmit="handleChatSubmit(event)">
+                    <input type="text" id="chat-input" placeholder="Type instruction (e.g. 'Rename col 2 to SKU')..." autocomplete="off">
+                    <button type="submit" class="btn btn-primary btn-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODAL: History -->
+    <div class="modal" id="modal-history">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Historical Extraction Runs (Agent Memory)</h3>
+                <button class="modal-close" onclick="closeModal('modal-history')">&times;</button>
+            </div>
+            <div class="modal-body" id="history-modal-body">
+                Loading history...
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: Templates -->
+    <div class="modal" id="modal-templates">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3>Learned Document Templates</h3>
+                <button class="modal-close" onclick="closeModal('modal-templates')">&times;</button>
+            </div>
+            <div class="modal-body" id="templates-modal-body">
+                Loading templates...
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
